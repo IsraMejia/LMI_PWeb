@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lmi_web/pages/quienes_somos.dart';
-
 import 'welcome.dart';
 
 class HomePage extends StatefulWidget {
