@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lmi_web/pages/quienes_somos.dart';
+
+import 'welcome.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,46 +38,45 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            color: Colors.white,
-          ),
           Positioned(
             top: 20,
-            left: 20,
+            left: 150,
             child: Container(
               child: Row(
                 children: [
                   Container(
-                      height: 80, width: 80, child: Image.asset('Imagen1.png')),
+                      height: 100,
+                      width: 100,
+                      child: Image.asset('Imagen1.png')),
                   Container(
                     width: 15,
                   ),
                   Text(
                     'Laboratoria de Multimedia e Internet',
                     style: GoogleFonts.padauk(
-                        fontSize: 20, color: Color(0xff3196e2)),
+                        fontSize: 25, color: Color(0xff3196e2)),
                   )
                 ],
               ),
             ),
           ),
+          //barra lateral
           Positioned(
-            top: 100,
+            left: 10,
+            top: 15,
             child: Container(
               margin: EdgeInsets.all(0),
               height: (MediaQuery.of(context).size.height) - 50,
-              width: 101.0,
+              width: 90.0,
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
                 color: Color(0xFF8dc6ef),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30.0),
-                  bottomLeft: Radius.circular(30.0),
-                ),
               ),
               child: Stack(
                 children: [
                   Positioned(
-                    top: 60.0,
+                    //separación de la parte superior
+                    top: 100.0,
                     child: Column(children: <Widget>[
                       Column(
                         children: icon
@@ -92,11 +94,12 @@ class _HomePageState extends State<HomePage> {
                             .toList(),
                       )
                     ]),
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
+          //presentación principal
         ],
       ),
     );
@@ -164,11 +167,27 @@ class _NavBarItemState extends State<NavBarItem> with TickerProviderStateMixin {
     }
   }
 
+//animación hay hacer click
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         widget.onTap();
+        if (widget.icon == Icons.home) {
+          print('Home');
+          Welcome();
+        } else if (widget.icon == Icons.group) {
+          print('Group');
+          Quienes_somos();
+        } else if (widget.icon == Icons.create) {
+          print('create');
+        } else if (widget.icon == Icons.engineering) {
+          print('engineering');
+        } else if (widget.icon == Icons.fact_check) {
+          print('fact');
+        } else if (widget.icon == Icons.contact_mail_rounded) {
+          print('mail');
+        }
       },
       child: MouseRegion(
         onEnter: (value) {
@@ -210,6 +229,7 @@ class _NavBarItemState extends State<NavBarItem> with TickerProviderStateMixin {
   }
 }
 
+//Curva de pintura para la animación
 class CurvePainter extends CustomPainter {
   final double animValue1;
   final double animValue2;
