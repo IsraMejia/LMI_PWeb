@@ -26,6 +26,8 @@ dependencies:
   google_fonts: ^1.1.2
   rive: ^0.6.7
   flare_flutter: ^2.0.6
+  carousel_slider: ^2.3.1
+  carousel_pro: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +54,13 @@ assets:
   - assets/Imagen1.png
   - assets/connection.flr
   - assets/Empty.flr
+  - assets/Imagen2.png
+  - assets/Imagen3.jpg
+  - assets/Service1.png
+  - assets/Service2.png
+  - assets/Service3.png
+  - assets/Fondo_celulares.JPG
+  - assets/Fondo_computadora.PNG
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
